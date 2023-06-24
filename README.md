@@ -52,7 +52,29 @@ evo has several advantages over other public benchmarking tools:
 Installation is easy-peasy if you're familiar with this: https://xkcd.com/1987/#
 
 evo supports **Python 3.8+**. The last evo version that supports **Python 2.7** is `1.12.0`.
-You might also want to use a [virtual environment](https://github.com/MichaelGrupp/evo/blob/master/doc/install_in_virtualenv.md).
+
+### Virtual Environment Instruction
+
+If you want to use a virtual environment:
+
+In the project folder run:
+```
+python3 -m venv ../evo_venv
+. ../evo_venv/bin/activate
+```
+Now you should be inside the virtual environment, please run the command to install the package. You only need to run it first time:
+```
+pip install --ignore-installed evo --no-binary evo
+```
+and then run a command to use the package. For example:
+```
+evo_ape euroc ~/slam_data/vins_data/MH_05_difficult/mav0/state_groundtruth_estimate0/data.csv ~/projects/VINS-Course/pose_output.txt -a -p
+```
+After you are done, you can run
+```
+deactivate
+```
+to exit the virtual envrionment.
 
 ### From PyPi
 If you just want to use the executables of the latest release version, the easiest way is to run:
